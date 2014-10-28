@@ -60,6 +60,11 @@ class zookeeper::server (
     }
     'deb': {
       if ($manage_service == true) {
+        if ($datadir == undef) {
+          $use_datadir = $zookeeper::params::zookeeper_deb_datadir
+        } else {
+          $use_datadir = $datadir
+        }
         service {
           'zookeeper':
             ensure     => running,
