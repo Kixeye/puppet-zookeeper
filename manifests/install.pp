@@ -78,7 +78,7 @@ class zookeeper::install (
         cwd     => '/var/tmp',
         notify  => Exec['zookeeper-extract'],
       }
-    
+
       #Install zookeeper
       exec { 'zookeeper-extract':
         command => "tar -C /var/tmp -xzf /var/tmp/zookeeper-${version}.tar.gz",

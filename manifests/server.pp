@@ -71,11 +71,7 @@ class zookeeper::server (
             enable     => true,
             hasrestart => true,
             hasstatus  => true,
-            require    => [
-              Package['zookeeper'],
-              File["${use_datadir}/myid"],
-              File['/etc/zookeeper/zoo.cfg']
-            ],
+            require    => [Package['zookeeper'], File["${use_datadir}/myid"]],
         }
       }
     }

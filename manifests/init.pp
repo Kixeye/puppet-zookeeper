@@ -149,8 +149,7 @@ class zookeeper (
     manage_java    => $manage_java,
     homedir        => $use_homedir,
     datadir        => $use_datadir,
-  }
-
+  } ->
   class { 'zookeeper::config':
     install_method => $install_method,
     service_user   => $use_service_user,
@@ -160,8 +159,7 @@ class zookeeper (
     clientport     => $clientport,
     server_list    => $server_list,
     group          => $server_group,
-  }
-
+  } ->
   class { 'zookeeper::server':
     install_method => $install_method,
     manage_service => $manage_service,
